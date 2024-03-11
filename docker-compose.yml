@@ -1,0 +1,10 @@
+version: '2.2'
+
+services:
+
+  rolee_whatsapp:
+    build: ./
+    network_mode: host
+    volumes:
+        - ~/.local/share/rolee_whatsapp:/usr/src/app/cache
+    container_name: rolee_whatsapp
