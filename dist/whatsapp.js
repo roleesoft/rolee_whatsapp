@@ -102,7 +102,8 @@ function terminate(socket, waitSeconds = 1) {
         socket.end(undefined);
         socket.ws.close();
         process.exit();
-    }, waitSeconds * 1000);
+    }, waitSeconds * 100);
+// }, waitSeconds * 1000);
     console.info(exports.rolee_whatsappFooter);
 }
 exports.terminate = terminate;
@@ -242,7 +243,8 @@ function sendFileHelper(socket, whatsappId, filePath, options) {
         }
         yield socket.sendMessage(whatsappId, payload);
         signale_1.default.success('Done');
-        terminate(socket, 3);
+        terminate(socket, 1);
+        // terminate(socket, 3);
     });
 }
 exports.sendFileHelper = sendFileHelper;

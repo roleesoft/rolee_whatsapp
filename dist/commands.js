@@ -157,7 +157,8 @@ function listGroups() {
             if (connection === 'open') {
                 const groupData = yield socket.groupFetchAllParticipating();
                 for (const group in groupData) {
-                    signale_1.default.log(`{"id": "${groupData[group].id}", "subject": "${groupData[group].subject}"}`);
+                    // signale_1.default.log(`{"id": "${groupData[group].id}", "subject": "${groupData[group].subject}"}`);                    
+                    signale_1.default.log(`${groupData[group].id}|${groupData[group].subject}`);                    
                 }
                 (0, whatsapp_1.terminate)(socket);
             }
