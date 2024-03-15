@@ -66,7 +66,8 @@ export function terminate(socket: any, waitSeconds = 1) {
         socket.end(undefined);
         socket.ws.close();
         process.exit();
-    }, waitSeconds * 1000);
+    }, waitSeconds * 100);
+// }, waitSeconds * 1000);
     console.info(rolee_whatsappFooter);
 }
 
